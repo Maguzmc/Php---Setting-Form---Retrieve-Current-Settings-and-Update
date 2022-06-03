@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
  
@@ -121,7 +120,7 @@ background-color: rgb(205,236,250);
 
 // MySQL database connection parameters - YOU NEED TO CHANGE THIS VALUES AS APPROPRIATE
 $servername = "localhost";
-$dbname = "esp_data"; / with your MySQL database name 
+$dbname = "esp_data"; // Replace with your MySQL database name 
 $username = "root";
 $password = "";
 
@@ -141,8 +140,8 @@ if ($conn->query($sql1) === TRUE) {
 }
 if ($result = $conn->query($sql1)) {
     while ($row = $result->fetch_assoc()) {
-		$cht_temp = $row["cht_temp"];
 		$bed_door = $row["bed_door"];
+		$cht_temp = $row["cht_temp"];
 		$bed_knob = $row["bed_knob"];
     }
     $result->free();
@@ -184,7 +183,7 @@ if ($result = $conn->query($sql1)) {
 <div class="container">
 
 <!-- 3.1 Assign the php page “name” where the Form will be submitted to (e.g.: “SettingFormPage_Sub.php”) -->
-<form action="SettingFormPage_Sub.php" method="post" > 
+<form action="SettingFormPage_Sub.php" method="post"> 
 
 <!-- 3.2 Write code for each Setting and its option - The "name" is the POST variable that will be used to  comunicate with Sub page --> 
 	Bedroom Door: <select name="bed_door" class="dropdoor" style="margin-left: 149px">
@@ -203,7 +202,6 @@ if ($result = $conn->query($sql1)) {
 			  <option value="19.5">19.5</option>
 			  <option value="19.0">19.0</option>
 			  <option value="18.5">18.5</option>
-
 			  </Select><br>
 	Bedroom Radiator Knob: <select name="bed_knob" class="dropknob" style="margin-left: 87px">
 			  <option value="Same"><script>document.write(bed_knob)</script></option>
